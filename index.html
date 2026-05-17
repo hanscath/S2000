@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sailing under the Golden Gate — Hans Cathcart</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #f4efe6;
+    --paper-warm: #ebe3d3;
+    --ink: #1a1612;
+    --ink-soft: #3a322a;
+    --ink-muted: #6b5f53;
+    --rule: #c9bca8;
+    --accent: #8b1e1e;
+    --accent-deep: #5a1313;
+    --gold: #8a6f3a;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    padding: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 19px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-image:
+      radial-gradient(at 20% 10%, rgba(138, 111, 58, 0.04) 0%, transparent 50%),
+      radial-gradient(at 80% 80%, rgba(139, 30, 30, 0.03) 0%, transparent 50%);
+  }
+
+  /* Subtle paper grain */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.4;
+    mix-blend-mode: multiply;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.15 0 0 0 0 0.12 0 0 0 0 0.08 0 0 0 0.06 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  .page {
+    position: relative;
+    z-index: 2;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 80px 32px 120px;
+  }
+
+  /* Masthead */
+  .masthead {
+    text-align: center;
+    margin-bottom: 70px;
+    position: relative;
+  }
+
+  .masthead-rule {
+    height: 1px;
+    background: var(--ink);
+    margin: 0 auto 24px;
+    width: 100%;
+  }
+
+  .masthead-eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    margin-bottom: 18px;
+  }
+
+  .masthead-eyebrow .draft-tag {
+    color: var(--accent);
+    font-weight: 500;
+  }
+
+  h1.title {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+    font-size: clamp(34px, 5.5vw, 52px);
+    line-height: 1.1;
+    margin: 0 0 28px;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+  }
+
+  h1.title .em {
+    font-style: italic;
+    color: var(--accent-deep);
+  }
+
+  .byline {
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    font-size: 17px;
+    color: var(--ink-soft);
+    margin-bottom: 8px;
+  }
+
+  .byline-name {
+    font-style: normal;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+  }
+
+  .dateline {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    margin-top: 20px;
+  }
+
+  /* Ornamental divider */
+  .ornament {
+    text-align: center;
+    margin: 36px 0 48px;
+    color: var(--gold);
+    font-size: 14px;
+    letter-spacing: 1em;
+    padding-left: 1em;
+  }
+
+  /* Lede paragraph */
+  .lede {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    line-height: 1.5;
+    color: var(--ink-soft);
+    margin-bottom: 28px;
+    font-weight: 400;
+  }
+
+  /* Body */
+  p {
+    margin: 0 0 22px;
+    text-align: left;
+    hyphens: manual;
+    -webkit-hyphens: manual;
+  }
+
+  /* Drop cap on first paragraph after a section heading */
+  h2 + p::first-letter,
+  .first-para::first-letter {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: 4.6em;
+    float: left;
+    line-height: 0.85;
+    padding: 6px 10px 0 0;
+    color: var(--accent-deep);
+  }
+
+  /* Section headings */
+  h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 1.2;
+    margin: 64px 0 8px;
+    color: var(--ink);
+    letter-spacing: -0.005em;
+  }
+
+  h2::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 1px;
+    background: var(--accent);
+    margin: 14px 0 24px;
+  }
+
+  /* Section eyebrow numbering */
+  .section-eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    margin: 64px 0 -4px;
+    display: block;
+  }
+
+  .section-eyebrow + h2 {
+    margin-top: 6px;
+  }
+
+  /* Emphasis lines like "Game on." */
+  p.flourish {
+    text-align: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 24px;
+    font-weight: 500;
+    color: var(--accent-deep);
+    margin: 32px 0;
+    letter-spacing: 0.02em;
+  }
+
+  p.flourish::before,
+  p.flourish::after {
+    content: '·';
+    display: inline-block;
+    margin: 0 14px;
+    color: var(--gold);
+    font-style: normal;
+  }
+
+  /* Italic / emphasis */
+  em, i { font-style: italic; }
+  strong, b { font-weight: 600; }
+
+  /* Sidebar / aside section */
+  .sidebar-divider {
+    margin: 80px auto 60px;
+    text-align: center;
+    color: var(--ink-muted);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    position: relative;
+  }
+
+  .sidebar-divider::before,
+  .sidebar-divider::after {
+    content: '';
+    display: inline-block;
+    width: 60px;
+    height: 1px;
+    background: var(--rule);
+    vertical-align: middle;
+    margin: 0 16px;
+  }
+
+  .sidebar {
+    background: var(--paper-warm);
+    border-left: 3px solid var(--gold);
+    padding: 32px 36px 16px;
+    margin: 0 -12px;
+    position: relative;
+  }
+
+  .sidebar-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 4px;
+  }
+
+  .sidebar h2 {
+    font-size: 24px;
+    margin-top: 4px;
+  }
+
+  .sidebar h2::after {
+    background: var(--gold);
+  }
+
+  /* Mechanic review note at top */
+  .review-banner {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 18px 24px;
+    margin-bottom: 60px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    line-height: 1.6;
+    letter-spacing: 0.04em;
+    border-left: 4px solid var(--accent);
+  }
+
+  .review-banner .banner-title {
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-weight: 500;
+    margin-bottom: 6px;
+    font-size: 11px;
+  }
+
+  /* Image search placeholder note */
+  .photo-placeholder {
+    margin: 28px 0;
+    padding: 14px 20px;
+    border: 1px dashed var(--rule);
+    background: rgba(255,255,255,0.3);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--ink-muted);
+    letter-spacing: 0.05em;
+    text-align: center;
+  }
+
+  /* Colophon footer */
+  .colophon {
+    margin-top: 100px;
+    padding-top: 32px;
+    border-top: 1px solid var(--rule);
+    text-align: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    color: var(--ink-muted);
+    text-transform: uppercase;
+  }
+
+  .colophon-mark {
+    color: var(--gold);
+    font-size: 14px;
+    margin-bottom: 10px;
+    letter-spacing: 0.4em;
+    padding-left: 0.4em;
+  }
+
+  /* Responsive */
+  @media (max-width: 640px) {
+    body { font-size: 17px; line-height: 1.6; }
+    .page { padding: 50px 22px 80px; }
+    .lede { font-size: 19px; }
+    h2 { font-size: 25px; margin-top: 48px; }
+    h2 + p::first-letter,
+    .first-para::first-letter {
+      font-size: 4em;
+    }
+    .sidebar {
+      padding: 24px 22px 8px;
+      margin: 0 -8px;
+    }
+    p.flourish { font-size: 20px; }
+    p.flourish::before,
+    p.flourish::after { margin: 0 8px; }
+  }
+
+  /* Print styles for mechanics who want a hard copy */
+  @media print {
+    body { background: white; color: black; font-size: 12pt; }
+    body::before { display: none; }
+    .review-banner { display: none; }
+    .page { max-width: 100%; padding: 20px; }
+    h2 { page-break-after: avoid; }
+    p { page-break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<article class="page">
+
+  <div class="review-banner">
+    <div class="banner-title">Draft for Review</div>
+    Posted here for review by Eric, Dora, and Miller, before publication to r/S2000 and s2ki. Comments and corrections welcome. Photos will be added prior to Reddit posting.
+  </div>
+
+  <header class="masthead">
+    <div class="masthead-rule"></div>
+    <div class="masthead-eyebrow">A Retrospective &nbsp;·&nbsp; <span class="draft-tag">2006 — 2026</span></div>
+    <h1 class="title">Sailing under the<br><span class="em">Golden Gate</span></h1>
+    <p class="byline">My 20-year, 2-ocean journey with one AP2,<br>and one of the last OEM crate short-blocks in the US.</p>
+    <p class="byline">by <span class="byline-name">Hans Cathcart</span></p>
+    <div class="dateline">Suzuka · Arlington · Munich · San Francisco</div>
+  </header>
+
+  <div class="ornament">✦ ✦ ✦</div>
+
+  <p class="first-para">There are a lot of people who look at the S2000's sleek styling and see a wanna-be Ferrari. They see a handsome roadster shape, a red paintjob perhaps, and a silhouette, and they think it's a design exercise.</p>
+
+  <p>The body is lovely. But the styling is the cherry on top. Let me explain.</p>
+
+  <p>Before I became a long-term steward of my 2006 AP2, I used to be a docent at the Smithsonian's National Air &amp; Space Museum. When you spend enough time around the history of flight, explaining winged artifacts to visitors on the floor of the Udvar-Hazy Center, you begin to realize that the most iconic machines in human history were never defined by their outer skins. They were defined by what propelled them. Only the most dedicated mechanics go under the entrance ramp to marvel at the engines.</p>
+
+  <p>The Concorde is a beautiful delta-wing marvel, but it is nothing without the Rolls-Royce/SNECMA Olympus 593 turbojets that pushed it to Mach 2. The SR-71 Blackbird is a titanium masterpiece, but its existence relies entirely on the Pratt &amp; Whitney J58 axial-flow turbojets breathing under its skin. The Space Shuttle was a triumph of orbital design, but it was born on the back of the Rocketdyne RS-25 liquid-propellant rocket engines. The Packard V-1650 Merlin of the later model P-51s... I could go on.</p>
+
+  <p>Each of these engines didn't just power the craft—they <em>made</em> the craft what it is.</p>
+
+  <p>That is the lens through which we have to look at this car. Those of us who have been lucky enough to drive the S2000 know it's the engine—whether the F20C or the F22C1—that makes this car special. Yes, it's a car engine not a turbojet, but this heart is the reason every driver loves it, and why it commands a kind of reverence that few modern sports cars ever achieve. Even former SR-71 pilot docents talk about the propulsion system. Honda's engine is a masterpiece of naturally aspirated engineering, built in-house at Suzuka to racing tolerances, with a mechanical harmony that makes the car feel less like a commuter vehicle and more like a low-flying aircraft.</p>
+
+  <p>Whatever AP camp you're in, whatever year you think is best, we're all part of the tribe that cherishes the way this car is built and how it performs. We aren't collectors of static art pieces or showroom silhouettes. We are curators of a mechanical legend.</p>
+
+  <p>I've spent 20 years and 127,000 miles listening to that mechanical symphony across multiple continents. And after a recent transition to a brand-new factory HOP crate short-block paired with a masterfully built head, I was reminded all over again: we don't drive a wrapper. We drive an engine.</p>
+
+  <span class="section-eyebrow">Chapter I</span>
+  <h2>The Journey of the Chassis: From Suzuka to the Potomac</h2>
+
+  <p>Before that engine could ever sing, a chassis had to be born. It began its life in 2006 at Honda's flagship Suzuka plant in Mie Prefecture, Japan. To understand the sheer scale of its survival, you have to realize that this machine was a global voyager before it ever accumulated a single mile on its odometer. It was loaded onto a massive roll-on/roll-off cargo vessel, and crossed the Pacific Ocean, slipping eastward through the Panama Canal, navigating the warm waters of the Caribbean Sea, and finally crossing the Atlantic to arrive on the eastern seaboard of the United States.</p>
+
+  <p>Waiting for it at Brown's Honda dealership in Arlington, Virginia was a recently divorced 32-year-old kid who had spent years dreaming of this exact moment. It was a dream sparked in the final years of the 20th Century when I saw the first conceptual sketches of the SSM roadster in a magazine.</p>
+
+  <div class="photo-placeholder">[ photo placeholder — delivery day, Arlington, 2006 ]</div>
+
+  <p>When the time came to negotiate the price, the gravity of the moment briefly short-circuited my tongue. I inadvertently looked the dealer in the eye and offered $22k, when I had fully meant to say $32k. The room fell into silence. The dealer stared at me, caught off guard, clearly feeling that I had just insulted the engineering value of Honda's crown jewel. We corrected course, the papers were signed, and a choice had to be made about preserving the pristine lines of the trunk. I debated spoiling that sleek rear deck with a factory wing or an XM radio antenna; ultimately, I chose the connection to music beamed from outer space.</p>
+
+  <p>Driving it off the lot as my first-ever new car was a revelation. Shifting through the gears and rolling along the Maryland countryside felt nothing short of magical. But the honeymoon period of perfection was short-lived. On my way to cross the Potomac River via White's Ferry, I took a wrong turn and found myself on a dusty, unpaved gravel road. As the stones pinged against the underbody and dust kicked up into the pristine wheel wells, a wave of guilt washed over me. I was convinced I was ruining my brand-new machine. Had I only known then that I would keep this piece of engineering for the next twenty years, I might have felt less guilty about a little Maryland dust.</p>
+
+  <p>Over the next four years, that chassis became a fixture of the American East Coast. It journeyed north to New England, navigated the concrete canyons of New York City, and tore down south into the mountain air of North Carolina. It stood in the shadow of history on the National Mall, parked beneath the glass walls of the National Air &amp; Space Museum, and regularly tore up the sweeping curves of the George Washington Parkway.</p>
+
+  <span class="section-eyebrow">Chapter II</span>
+  <h2>The Transatlantic Leap</h2>
+
+  <p>Then came 2010. I accepted a new career opportunity in Munich, Germany, and was instantly confronted with a profound, impractical dilemma. Do I take a rear-wheel-drive, high-revving Japanese roadster to a country notorious for its brutal winter weather and the most unforgiving vehicle safety standards on the planet? Or do I leave a piece of my identity behind? Logistically, I'd also have to rent an apartment with a garage, a pricier and more difficult thing to find in Bavaria.</p>
+
+  <p>I chose to take the leap.</p>
+
+  <p>I paid an extra $1,400 out of pocket to upgrade my relocation package from a standard 20-foot shipping container to a 40-foot fortress. As the container doors latched shut and the ship departed the American East coast, I was gripped by the distinct, anxious certainty that the vessel would encounter a catastrophic Atlantic storm, and that my S2000 would become one of those rare, tragic statistics resting at the bottom of the sea.</p>
+
+  <p>But the ship held. The container arrived on European soil. Yet, as I would quickly learn, surviving a transatlantic voyage was only half the battle. Convincing the strict bureaucrats of the Bavarian government to actually let me register and drive an American-spec sports car on German roads was an entirely different conflict altogether.</p>
+
+  <span class="section-eyebrow">Chapter III</span>
+  <h2>The Bureaucratic Gauntlet and the Stamped "e"</h2>
+
+  <p>Dealing with German bureaucrats is an exercise in encountering people who are surprisingly friendly, yet entirely uncompromising. Navigating their labyrinth required retreating to the local Honda dealership, mobilizing a paper trail directly from Honda corporate to verify the car's pedigree, and proving indisputable ownership.</p>
+
+  <p>Then came the physical modifications. European regulations mandated a rear fog light, a feature entirely absent from the clean lines of the American rear bumper. Fortunately, Honda Häusler Automobile executed the installation with a level of precision that made the new light look as though it had been integrated into the original Suzuka design.</p>
+
+  <p>But where the bureaucracy descended into pure absurdity was the headlights.</p>
+
+  <p>The inspection officers halted the registration because my American-spec housings were missing—get ready for it—a tiny, imprinted letter "e" stamped into the plastic to signify European conformity. I balked at the sheer rigidity of the demand. I told them there had to be a better way forward than discarding a pair of perfectly good, flawless factory headlights just to replace them with functionally identical housings that merely possessed a different stamp.</p>
+
+  <p>They finally relented, granting me passage to an official TÜV inspection station for an analytical compromise. I had to scientifically prove that my American high beams would not blind an oncoming Porsche and cause it to veer violently off the road. The high beams were fine. The paperwork was stamped, and I was finally handed my coveted "M-" Munich license plate, alongside the car's very first Autobahn <em>Plakette</em>.</p>
+
+  <p class="flourish">Game on.</p>
+
+  <span class="section-eyebrow">Chapter IV</span>
+  <h2>The Laws of the Left Lane</h2>
+
+  <p>Unleashing a sports car in Germany is a lesson in contradiction. Driving on the Autobahn is, first and foremost, a grueling exercise in patience. Near the cities, the illusion of limitless speed vanishes; you rarely exceed 120 km/h, and there is absolutely no American-style "5 to 10 mph wiggle room" with the speed cameras. You learn to drive exactingly. You learn the golden rules of the territory: never cruise in the left lane (yeah, I did that early on), constantly scan your mirrors for the true lunatics approaching from the horizon at over 200 km/h (a lunatic I eventually became), and never, <em>never</em> pass on the right.</p>
+
+  <p>Except once.</p>
+
+  <p>Although there are many stories, two distinct moments from that era remain permanently etched into the chassis' history. The first occurred on an unusually wide, sweeping three-lane stretch of tarmac between Nürnberg and Munich (the A9). I came over the crest of a hill at 220 km/h in the center lane, only to find a slow-moving Audi stubbornly 'parked' in the far-left lane of an otherwise entirely empty highway. I say 'parked' because when the other car is driving 100 km/h and you're doing 220, it's like driving towards a wall at 120. With closing speeds that high, a significant deceleration and a quick pass in the very right lane spared me an expensive brake job.</p>
+
+  <p>I rolled back into my apartment garage, and parked next to my neighbor's BMW 3-Series. Yes, Munich is the heart of BMW-land, and she worked there as an engineer. But despite our different brand loyalties, my Suzuka-built Honda received respect.</p>
+
+  <p>The second memory is one of pure, adrenaline-fueled survival. Driving south of Stuttgart on a notoriously crash-prone, winding stretch of the A8, my AP2 barely avoided a total catastrophe. Semi-truck drivers in Europe drive dangerously close together, a terrifying habit I have never fully understood.</p>
+
+  <p>I was rolling down the center lane at a reasonable speed, passing one semi after another, when a looming sense of danger hit me as the highway began to climb a grade. Perhaps it was because I was still cruising in sixth gear. ;-)</p>
+
+  <p>Things didn't seem right, a premonition perhaps. Instinct took over. As a sensible American driver I wanted more distance from the trucks, but in Germany you're taught to stay right. I broke the rules and moved to the wide-open left lane. Then, I did what any experienced S2000 driver would do—I accelerated, just in case some crazy Mercedes was closing in from behind me.</p>
+
+  <p>That tactical acceleration saved my life. I had just cleared the point of potential conflict when a truck driver behind me smashed into the back of another semi.</p>
+
+  <p>Immediately, I saw particles shatter in my rearview mirror—an explosion of wooden splinters that would have pierced straight through my fabric soft-top had I been just two seconds slower. I was shell-shocked for the next hour of driving. The F22C1 hadn't just given me joy that day; its responsiveness had kept me alive.</p>
+
+  <span class="section-eyebrow">Chapter V</span>
+  <h2>Flying on Pavement: Switzerland and the Bodensee</h2>
+
+  <p>Fortunately, not all drives on the Autobahn involved that level of terror, and I can happily say I enjoyed two years of using the S2000 to its fullest potential. A friend recently asked me what my absolute favorite memory of driving my car was, and while it's incredibly hard to pick a single moment, driving on the near-perfect Swiss autobahns during a trip to Zurich with the Bodensee (Lake Constance) on one side and the Alps on the other was a thing of absolute beauty. It was easy to see because I had the top down.</p>
+
+  <p>Their speed limits top out at 120 or 130 km/h, but I doubt the average American driver can even imagine how smooth roads can truly be. The typically tight, communicative double-wishbone suspensions on our S2000s mean we feel the texture of the road like few other cars. But on this particular stretch of Swiss pavement, just cruising at the speed limit, the feedback completely changed. It felt like the car was floating, like we were airborne, and I wasn't even exceeding 220 km/h.</p>
+
+  <span class="section-eyebrow">Chapter VI</span>
+  <h2>Touching the Limits: 243 km/h</h2>
+
+  <p>Speaking of which, since you're all wondering, the absolute top speed my chassis has ever hit is 243 km/h (151 mph), achieved with the top up. It wasn't an easy feat getting it there. The A8 from Munich to Stuttgart is notoriously bendy, and there are countless zones where the speed limits drop abruptly down to 100 km/h due to noise-abatement regulations (a concept fellow airplane pilots will deeply appreciate).</p>
+
+  <p>However, there is a glorious three-lane stretch just west of the Stuttgart airport that features what feels like a 2% downslope. Coming over the crest of that hill with everything my little red ride could muster, I managed to push the engine right near redline. I finally had to back off as the rear end started floating. Remember, I chose the connection to space, so I had no wing to anchor me. I was foolish, I'm sorry mom, but you haven't truly lived until you've felt that close to certain death.</p>
+
+  <p>Top-down, with the tonneau cover, I think the absolute limit of my courage was 210 km/h (130 mph). At those velocities, even with the windows rolled all the way up, the wind shear is so terrifyingly loud and the sudden, visceral realization that you don't possess a full roll cage keeps your foot from stepping down any further.</p>
+
+  <span class="section-eyebrow">Chapter VII</span>
+  <h2>The Ultimate Alpine Pack Mule</h2>
+
+  <p>Lastly, although I occasionally used the car for commuting, it was first and foremost a good-weather grand road-tripper. Over those European years, it made its mark across Germany, Austria, Switzerland, and Italy.</p>
+
+  <p>The S2000 is notoriously starved for cargo space, but where there is an enthusiast's will, there is a way. I managed to wedge my snowboard into the passenger seat, cram a suitcase into the trunk, and throw a set of snow chains on top of it to go hit the winter slopes in Passo del Tonale. Good times.</p>
+
+  <span class="section-eyebrow">Chapter VIII</span>
+  <h2>The Return Transit and the Golden Gate</h2>
+
+  <p>The unique compromise I had struck with the German authorities over my missing headlight stamps came with a strict condition: I was legally forbidden from ever selling the car while living within the borders of Germany. That was perfectly fine by me. But it meant that when the time inevitably came for my return to the United States, the car would have to take to the sea once more.</p>
+
+  <p>The process repeated itself. The car was driven back into the safety of an upsized 40-foot container, latched into the darkness of the steel box, and sent on its way.</p>
+
+  <p>While its original journey from Virginia had been a relatively straight, transatlantic shot, this time the AP2 was bound for California. I meticulously traced its progress on a commercial ship-tracking website, watching its journey unfold across multiple legs. It went aboard at least two different massive container vessels, making tactical logistics stops in Rotterdam and a port along the Iberian Peninsula before setting out across the open Atlantic.</p>
+
+  <p>It eventually found its way back to the warm waters of the Caribbean Sea (a region this car has now visited more times than its owner), and headed back toward the locks of the Panama Canal. For those keeping count at home, that marks two distinct transits through the canal, once in each direction. Not many S2000s have transited the Panama Canal twice.</p>
+
+  <div class="photo-placeholder">[ photo placeholder — Marin Headlands, container ship under the Golden Gate ]</div>
+
+  <p>As the ship cleared the canal and began its northern trek up the Pacific, I eagerly awaited the return of my mechanical companion. The anticipation was so high that on the day of its arrival, I drove out to the Marin Headlands and stood on the cliffs, watching from above as the massive container ship cut through the water, sailed directly beneath the spans of the Golden Gate Bridge, and maneuvered over to the Port of Oakland. In the years that followed, I would drive this very car across that iconic suspension bridge hundreds of times during my commutes into San Francisco.</p>
+
+  <p>My AP2 had finally made it back onto <em>terra firma</em> on the American West Coast. From that point on, I assumed the rest of our journey together would simply be a quiet accumulation of routine miles on the odometer.</p>
+
+  <p>Or so I thought.</p>
+
+  <span class="section-eyebrow">Chapter IX</span>
+  <h2>The Illusion of Simplicity and the Sonoma County Nightmare</h2>
+
+  <p>I should start by clarifying that while I am a passionate driver and an enthusiast, I am not a "car guy." I don't change my own oil, although I thoroughly understand the concept: drain the old oil, secure the drain bolt, add the fresh oil, close the filler cap, start the engine, and reset the oil life monitor. Hold onto that thought as a bit of foreshadowing; this shouldn't be a difficult concept for even a junior mechanic to grasp.</p>
+
+  <p>For the vast majority of our time together, all of my car's maintenance was done more or less on schedule. Occasionally I utilized Honda dealerships, but I usually relied on independent shops.</p>
+
+  <p>That said, as cars age (even machines as fundamentally well-engineered as our S2000s) they begin to require a bit of tender loving care as they approach the 80,000-mile mark. I probably waited too long on a valve adjustment, and the slotted brake rotors I installed were kind of silly. I did okay on some things and waited too long on others. But then I got insanely unlucky.</p>
+
+  <p>At first, it was just a standard clutch replacement. My regular mechanic wasn't entirely comfortable dropping the transmission on an S2000, so he gave me a recommendation to a specialty shop a few towns south in Sonoma County. Let's just say these guys didn't know the first thing about Hondas, and they weren't honest enough to admit it.</p>
+
+  <p>The botched clutch replacement spiraled into a transmission repair, which then led to a gear being catastrophically damaged during reassembly. The transmission repair technician wasn't careful. Thousands of dollars later, I found myself standing at a gas station in Fremont, California, filling up the tank and feeling utterly frustrated, wondering why my pride and joy was behaving so badly.</p>
+
+  <span class="section-eyebrow">Chapter X</span>
+  <h2>The Tribe at the Gas Station</h2>
+
+  <p>The broader Honda community is amazing, but the S2000 community is something even more special. You all know the feeling—the mutual waves as we pass each other on the road, the spontaneous conversations at stoplights about tuning options. It is an incredible network. Because I don't race, and the closest my car has ever been to a track is the parking lot at Laguna Seca, I wasn't deeply looped into the NorCal Honda community at the time.</p>
+
+  <p>But the tribe looked out for me anyway.</p>
+
+  <p>Another Honda driver—whose name I sadly can no longer recall—spotted me at that Fremont gas station and commented on my red-and-black ride. Frustrated and exhausted by the mechanical gremlins, I opened up to him about my troubles. Without hesitation, he told me I needed to go see Eric Viera out at Japanese Auto Service in Tracy.</p>
+
+  <p>Now, from the Bay Area, Tracy is a bit of a hike. But I desperately needed someone who could actually diagnose this car. A few days later, I found my way out to the Central Valley.</p>
+
+  <span class="section-eyebrow">Chapter XI</span>
+  <h2>Finding the Master</h2>
+
+  <p>As profoundly unlucky as I had been with that shop in Sonoma County, the universe paid me back in spades the moment I pulled into Japanese Auto Service. I don't mean for this to sound like a commercial advertisement, but finding a master Honda technician of Eric's caliber and professionalism is a rarity.</p>
+
+  <p>Eric meticulously took apart the mangled transmission, located the cracked gear left behind by the previous shop, fixed everything flawlessly, and had me back on the road with a proper new OEM clutch. In the process, he had to extract a very new, very expensive, and completely incompatible aftermarket part that the Sonoma County shop had thrown at the car; it still sits unused on a shelf in my garage to this day.</p>
+
+  <p>Before this narrative spins entirely into an exhaustive recounting of my maintenance receipts, I will fast-forward to say: this transmission rescue was only the prologue. Within the next year, my reliable, 117,000-mile, world-traveling 2006 S2000 would eventually undergo a complete heart transplant—emerging on the other side with one of the youngest, factory-fresh engines in the global S2000 fleet.</p>
+
+  <span class="section-eyebrow">Chapter XII</span>
+  <h2>A Death in the Family</h2>
+
+  <p>My S2000 story almost ended in November of 2024. It started with a simple oil change. Remember what I said about changing the oil being a simple concept for a junior mechanic? Well, someone missed the memo. By the time Eric got his hands on the car, opened up the engine, and saw what was going on, my 18-year-old F22C1 engine block was toast. I still remember that phone call like it was yesterday—it felt like a death in the family. Best he could guess, the engine was run without oil.</p>
+
+  <p>I've considered pulling out my old International Relations degree and lobbying the International Criminal Court to amend the Rome Statute to add this as a crime against humanity. Fortunately, Eric helped me speed through the five stages of grief, and we got to work on saving the car.</p>
+
+  <span class="section-eyebrow">Chapter XIII</span>
+  <h2>The Last Heart Donor?</h2>
+
+  <p>Now in Eric's shop, my S2k on figurative life support, we had to find a heart donor (a full 15 years after Honda built the last engine at the factory). I don't know how he did it, how many strings were pulled, but there was one last F22C1 short-block still for sale on ICB Motorsport. And we got it! We're pretty sure it was the last one available for sale in the US. Now, there may be a few crated engines sitting in collectors' garages (shame on you, this engine deserves to be driven!), but the likelihood this build is the last OEM install in the US, perhaps the world, is high—and at the very least, it's a very young heart.</p>
+
+  <p>For the uninitiated, the S2000's engine is kinda special, and its legendary factory reliability is exactly why these blocks became so rare. For decades, brand-new assemblies just sat on dealer shelves gathering dust because nobody actually needed a replacement engine under warranty—they simply refused to die. Fast-forward to today, and these power plants are in such high demand that people routinely steal these cars just to rip the engines out (another crime against humanity).</p>
+
+  <div class="photo-placeholder">[ photo placeholder — the crate, unpacked at Japanese Auto Service ]</div>
+
+  <p>When Eric unpacked the crate, I suspect it was a bit of a religious experience. In over a decade of being a Honda Master Technician, he'd never seen a brand-new F22C1 short-block, let alone the last one in the US. The artist got to work. But an engine needs more than a heartbeat; it needs to breathe. We had our pristine brand-new short-block, but now we needed a top-end, and finding an AP2 cylinder head was going to be its own quest.</p>
+
+  <span class="section-eyebrow">Chapter XIV</span>
+  <h2>An AP1 Head on an AP2 Short-block</h2>
+
+  <p>Once again, the community came to the rescue. Eric and his partner Dora frequent the NorCal racing circuits, and they know Miller Le—a legend in his own right. Miller builds heads like Stradivari builds violins. He had an AP1 top-end built for racing (Brian Crower stainless steel valves, a 3-angle valve job, new OEM valve guides, seals and keepers, with the head resurfaced and hot tanked). I'm the first to admit, I don't know what any of that means.</p>
+
+  <p>When Eric and Miller first told me about the hybrid build, I was a little concerned, but I trusted their judgment. In time, I've started to realize that this "AP1.5" setup, running on the stock ECU, is the ultimate choice for my mission. It feels absolutely fantastic.</p>
+
+  <p>Yet, somewhere out there, S2000 purists are likely shaking their heads, asking how a simple road-trip driver deserves an engine of this pedigree. Well, in a small way, I think I'm keeping Shigeru Uehara and Toshihiko Sawai's dream alive. With this new engine, I've already spent another 10,000 miles dropping the top, wringing out that high-revving masterpiece, engaging with the machine, and carving through the winding roads of Northern California.</p>
+
+  <p class="flourish">The legend never ends.</p>
+
+  <span class="section-eyebrow">Coda</span>
+  <h2>My Looming Regret</h2>
+
+  <p>It seems a little insane to get sentimental about machines, but I have yet to encounter an S2000 owner who doesn't love this car. I've also never met a former owner who doesn't, in some way, regret selling theirs, and I regularly meet owners of modern high-performance sports cars who wish they had an S2000 in their garage as well. As a professional product manager, I can tell you that a business simply cannot buy this kind of lifelong loyalty with marketing spend or product gimmicks.</p>
+
+  <p>I recently read about Honda's first annual financial loss, and I feel a great deal of sympathy for the employees at Honda, but I do hope they recognize the incredible legacy they are the chaperones of. I'm not waiting on a new S2000 to save the company—although a modern machine that possesses the exact same spirit would be nothing short of amazing. Owners like me, and mechanics like Eric and Miller who are keeping these machines alive, are still doing our part to honor the legacy.</p>
+
+  <p>As I prepare to pass my S2000 to its next owner — in part because it's hard to fit a driver and two kids into my flight of two — I'm certain I'll feel the exact same phantom ache that every former owner feels. The looming regret is already here. At least it inspired this retrospective. But more than anything, it has been an absolute privilege to stand as a steward of this mechanical masterpiece for the last 20 years.</p>
+
+  <p>Here in California, my S2000 conquered the Pacific Coast Highway, Lombard Street, Lake Tahoe, and the lovely curves of the roads near Lake Berryessa. And I hope the next owner adds many more domestic, and maybe international, locations to its flight log.</p>
+
+  <div class="sidebar-divider">Sidebar · Web Only</div>
+
+  <div class="sidebar">
+    <div class="sidebar-label">An aside · not posted to Reddit</div>
+    <h2>An Honest Admission on the S2000's Appeal</h2>
+    <p>Allow me a brief aside: When I bought this red roadster in my early thirties, I harbored the completely unfounded belief that driving a car like this would naturally "attract women." After twenty years behind the wheel of the S2000, I can officially confirm that exactly <em>one</em> In-N-Out cashier has ever commented on my car.</p>
+    <p>Instead, the parade of men who want to chat with me about Honda's engineering marvel is seemingly endless. Not to mention, driving it into any modern car dealership today is a continuous exercise in polite rejection: <em>"No, I'm not selling it. I'm just here for something else."</em></p>
+  </div>
+
+  <footer class="colophon">
+    <div class="colophon-mark">✦ ✦ ✦</div>
+    <div>Set in Cormorant Garamond &amp; EB Garamond<br>
+    A retrospective · Suzuka → Arlington → Munich → San Francisco · 2006–2026</div>
+  </footer>
+
+</article>
+
+</body>
+</html>
