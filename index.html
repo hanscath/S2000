@@ -355,6 +355,63 @@
     text-align: center;
   }
 
+  /* Video embed */
+  .video-embed {
+    max-width: 720px;
+    margin: 0 auto 60px;
+  }
+  .video-eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    text-align: center;
+    margin-bottom: 14px;
+  }
+  .video-eyebrow::before,
+  .video-eyebrow::after {
+    content: '';
+    display: inline-block;
+    width: 40px;
+    height: 1px;
+    background: var(--rule);
+    vertical-align: middle;
+    margin: 0 12px;
+  }
+  .video-frame {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    background: var(--ink);
+    box-shadow: 0 8px 30px rgba(26, 22, 18, 0.15);
+  }
+  .video-frame iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+  .video-caption {
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    font-size: 15px;
+    color: var(--ink-muted);
+    margin-top: 12px;
+    text-align: center;
+  }
+  .video-caption a {
+    color: var(--accent-deep);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent);
+  }
+  .video-caption a:hover {
+    border-bottom-style: solid;
+  }
+
   /* Floated figures inside prose */
   figure.photo {
     margin: 8px 0 18px;
@@ -755,6 +812,22 @@
     <img src="./reddit/img_3762_arrival_under_ggb.jpg" alt="Sailing under the Golden Gate, after crossing the Panama Canal a 2nd time." data-caption="Sailing under the Golden Gate, after crossing the Panama Canal a 2nd time.">
     <figcaption>My S2000 sailing under the Golden Gate, after crossing the Panama Canal for the second time.</figcaption>
   </figure>
+
+  <section class="video-embed">
+    <div class="video-eyebrow">Walk-around</div>
+    <!--
+    <div class="video-frame">
+      <iframe
+        src="https://www.youtube-nocookie.com/embed/slCK8-8vq1o"
+        title="S2000 walk-around video"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen>
+      </iframe>
+    </div> -->
+    <div class="video-caption">A walk-around of the car — <a href="https://youtu.be/slCK8-8vq1o" target="_blank" rel="noopener">watch on YouTube</a> - premieres at 7am PDT on July 28th.</div>
+  </section>
 
   <div class="ornament">✦ ✦ ✦</div>
 
