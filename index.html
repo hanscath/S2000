@@ -329,6 +329,353 @@
     padding-left: 0.4em;
   }
 
+  /* Hero image below masthead */
+  .hero-image {
+    margin: 0 auto 60px;
+    text-align: center;
+    max-width: 720px;
+  }
+  .hero-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    box-shadow: 0 8px 30px rgba(26, 22, 18, 0.15);
+    cursor: zoom-in;
+    transition: transform 0.4s ease;
+  }
+  .hero-image img:hover {
+    transform: scale(1.01);
+  }
+  .hero-image figcaption {
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    font-size: 15px;
+    color: var(--ink-muted);
+    margin-top: 12px;
+    text-align: center;
+  }
+
+  /* Floated figures inside prose */
+  figure.photo {
+    margin: 8px 0 18px;
+    max-width: 240px;
+    font-family: 'EB Garamond', serif;
+  }
+  figure.photo.right {
+    float: right;
+    margin-left: 28px;
+    margin-right: -8px;
+    clear: right;
+  }
+  figure.photo.left {
+    float: left;
+    margin-right: 28px;
+    margin-left: -8px;
+    clear: left;
+  }
+  figure.photo img {
+    width: 100%;
+    height: auto;
+    display: block;
+    box-shadow: 0 4px 14px rgba(26, 22, 18, 0.18);
+    cursor: zoom-in;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: var(--paper-warm);
+  }
+  figure.photo img:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(26, 22, 18, 0.25);
+  }
+  figure.photo figcaption {
+    font-size: 13px;
+    font-style: italic;
+    color: var(--ink-muted);
+    margin-top: 8px;
+    line-height: 1.4;
+    text-align: left;
+  }
+
+  /* Clear floats between major sections */
+  h2 { clear: both; }
+
+  /* Gallery grid at bottom */
+  .gallery-intro {
+    margin-top: 100px;
+    padding-top: 32px;
+    border-top: 1px solid var(--rule);
+    text-align: center;
+  }
+  .gallery-intro .section-eyebrow {
+    margin-top: 0;
+  }
+  .gallery-intro h2 {
+    text-align: center;
+    margin-top: 6px;
+  }
+  .gallery-intro h2::after {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .gallery-intro p {
+    text-align: center;
+    font-style: italic;
+    color: var(--ink-muted);
+    font-size: 16px;
+    max-width: 560px;
+    margin: 0 auto 40px;
+  }
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 14px;
+    margin: 40px 0 60px;
+  }
+  .gallery-grid figure {
+    margin: 0;
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 1 / 1;
+    background: var(--paper-warm);
+    box-shadow: 0 3px 10px rgba(26, 22, 18, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .gallery-grid figure:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px rgba(26, 22, 18, 0.25);
+  }
+  .gallery-grid img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    cursor: zoom-in;
+  }
+
+  /* Contact section */
+  .contact-section {
+    margin: 80px 0 40px;
+    padding: 36px 40px;
+    background: var(--paper-warm);
+    border: 1px solid var(--rule);
+    border-left: 3px solid var(--accent);
+    position: relative;
+  }
+  .contact-section .section-eyebrow {
+    margin: 0 0 4px;
+    color: var(--accent);
+  }
+  .contact-section h2 {
+    font-size: 26px;
+    margin: 4px 0 16px;
+  }
+  .contact-section h2::after {
+    display: none;
+  }
+  .contact-section p {
+    margin-bottom: 12px;
+    font-size: 18px;
+  }
+  .contact-section a {
+    color: var(--accent-deep);
+    text-decoration: none;
+    border-bottom: 1px solid var(--accent);
+    transition: background 0.2s ease;
+    padding: 0 2px;
+  }
+  .contact-section a:hover {
+    background: rgba(139, 30, 30, 0.08);
+  }
+
+  /* Technical details section */
+  .tech-details {
+    margin: 60px 0 40px;
+    padding-top: 40px;
+    border-top: 1px solid var(--rule);
+  }
+  .tech-details .section-eyebrow {
+    text-align: center;
+    display: block;
+    margin: 0 0 4px;
+  }
+  .tech-details h2 {
+    text-align: center;
+    margin: 4px 0 32px;
+    font-size: 30px;
+  }
+  .tech-details h2::after {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  dl.tech-list {
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+    font-family: 'EB Garamond', serif;
+    max-width: 560px;
+    margin: 0 auto;
+  }
+  dl.tech-list > div {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: baseline;
+    padding: 14px 0;
+    border-bottom: 1px dotted var(--rule);
+    gap: 20px;
+  }
+  dl.tech-list > div:last-child {
+    border-bottom: none;
+  }
+  dl.tech-list dt {
+    font-size: 15px;
+    letter-spacing: 0.04em;
+    color: var(--ink-soft);
+    text-transform: uppercase;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 400;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+  }
+  dl.tech-list dd {
+    margin: 0;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+    font-size: 20px;
+    color: var(--ink);
+    text-align: right;
+  }
+
+  /* Inline links (Instagram etc) */
+  p a.inline-link {
+    color: var(--accent-deep);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent);
+    transition: border-color 0.2s ease, background 0.2s ease;
+  }
+  p a.inline-link:hover {
+    border-bottom-style: solid;
+    background: rgba(139, 30, 30, 0.06);
+  }
+
+  /* Lightbox */
+  .lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(10, 8, 5, 0.94);
+    z-index: 1000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 40px;
+    cursor: zoom-out;
+  }
+  .lightbox.active {
+    display: flex;
+    animation: fadeIn 0.3s ease;
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  .lightbox img {
+    max-width: 90vw;
+    max-height: 80vh;
+    object-fit: contain;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    cursor: default;
+  }
+  .lightbox-caption {
+    color: rgba(255, 255, 255, 0.9);
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    font-size: 17px;
+    text-align: center;
+    margin-top: 22px;
+    max-width: 720px;
+    cursor: default;
+  }
+  .lightbox-counter {
+    color: rgba(255, 255, 255, 0.55);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    margin-top: 12px;
+    cursor: default;
+  }
+  .lightbox-close {
+    position: absolute;
+    top: 24px;
+    right: 32px;
+    color: rgba(255, 255, 255, 0.7);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    cursor: pointer;
+    padding: 8px 12px;
+    background: none;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: all 0.2s ease;
+    text-transform: uppercase;
+  }
+  .lightbox-close:hover {
+    color: white;
+    border-color: white;
+  }
+  .lightbox-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 40px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 20px;
+    transition: color 0.2s ease;
+    font-family: serif;
+    line-height: 1;
+  }
+  .lightbox-nav:hover {
+    color: white;
+  }
+  .lightbox-prev { left: 20px; }
+  .lightbox-next { right: 20px; }
+
+  /* Author's note — personal aside before Chapter I */
+  .author-note {
+    margin: 56px 0 40px;
+    padding: 22px 28px 8px;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    background: rgba(235, 227, 211, 0.35);
+    position: relative;
+  }
+  .author-note-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--accent-deep);
+    margin-bottom: 10px;
+  }
+  .author-note p {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 19px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+    margin: 0 0 14px;
+  }
+  .author-note p::first-letter {
+    font-size: 1em;
+    float: none;
+    padding: 0;
+    color: inherit;
+    font-weight: inherit;
+  }
+
   /* Responsive */
   @media (max-width: 640px) {
     body { font-size: 17px; line-height: 1.6; }
@@ -346,6 +693,26 @@
     p.flourish { font-size: 20px; }
     p.flourish::before,
     p.flourish::after { margin: 0 8px; }
+    figure.photo {
+      float: none !important;
+      max-width: 100%;
+      margin: 20px auto !important;
+    }
+    figure.photo img {
+      max-width: 100%;
+    }
+    .gallery-grid {
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 8px;
+    }
+    .contact-section {
+      padding: 26px 22px;
+      margin: 60px -6px 40px;
+    }
+    .tech-details h2 { font-size: 24px; }
+    dl.tech-list dd { font-size: 17px; }
+    .lightbox-nav { font-size: 32px; padding: 10px; }
+    .lightbox-close { top: 12px; right: 12px; font-size: 11px; }
   }
 
   /* Print styles for mechanics who want a hard copy */
@@ -353,20 +720,22 @@
     body { background: white; color: black; font-size: 12pt; }
     body::before { display: none; }
     .review-banner { display: none; }
+    .lightbox { display: none !important; }
     .page { max-width: 100%; padding: 20px; }
     h2 { page-break-after: avoid; }
     p { page-break-inside: avoid; }
+    figure.photo img,
+    .hero-image img,
+    .gallery-grid img {
+      box-shadow: none;
+      border: 1px solid #ccc;
+    }
   }
 </style>
 </head>
 <body>
 
 <article class="page">
-
-  <div class="review-banner">
-    <div class="banner-title">Draft for Review</div>
-    Posted here for review by Eric, Dora, and Miller, before publication to r/S2000 and s2ki. Comments and corrections welcome. Photos will be added prior to Reddit posting.
-  </div>
 
   <header class="masthead">
     <div class="masthead-rule"></div>
@@ -382,11 +751,21 @@
      style="vertical-align: -4px; margin: 0 0px;"> · Arlington · München · San Francisco</div>
   </header>
 
+  <figure class="hero-image">
+    <img src="./reddit/img_3762_arrival_under_ggb.jpg" alt="Sailing under the Golden Gate, after crossing the Panama Canal a 2nd time." data-caption="Sailing under the Golden Gate, after crossing the Panama Canal a 2nd time.">
+    <figcaption>My S2000 sailing under the Golden Gate, after crossing the Panama Canal for the second time.</figcaption>
+  </figure>
+
   <div class="ornament">✦ ✦ ✦</div>
 
   <p class="first-para">There are a lot of people who look at the S2000's sleek styling and see a wanna-be Ferrari. They see a handsome roadster shape, a red paint job, a silhouette—and they think it's a design exercise.</p>
 
   <p>The body is lovely. But the styling is the cherry on top. Let me explain.</p>
+
+  <figure class="photo left">
+    <img src="./reddit/img_9192_sunset_pic.jpg" alt="A world-traveling dream car for 20 years and 127k miles." data-caption="A world-traveling dream car for 20 years and 127k miles.">
+    <figcaption>A world-traveling dream car for 20 years and 127k miles.</figcaption>
+  </figure>
 
   <p>Before I became a long-term steward of my 2006 AP2, I used to be a docent at the Smithsonian's National Air &amp; Space Museum. When you spend enough time around the history of flight, explaining winged artifacts to visitors on the floor of the Udvar-Hazy Center, you begin to realize that the most important aircraft in human history were never defined by their outer skins. Dedicated mechanics get it, and venture under the entrance ramp to marvel at the engines on display.</p>
 
@@ -398,11 +777,21 @@
 
   <p>That is the lens through which we have to look at this car. Those of us who have been lucky enough to drive the S2000 know it's the engine, whether the F20C or the F22C1, that makes this car special. Yes, it's a car engine not a turbojet, but this heart is the reason every driver loves it, and why it commands a kind of reverence that few modern sports cars ever achieve. Even former SR-71 pilot docents talk about the propulsion system.</p>
 
+  <figure class="photo right">
+    <img src="./reddit/img_9178_planes_and_tower.jpg" alt="If only the S2000 could fly." data-caption="If only the S2000 could fly.">
+    <figcaption>If only the S2000 could fly.</figcaption>
+  </figure>
+
   <p>Honda's engine is a masterpiece of naturally aspirated engineering, built in-house at Suzuka to racing tolerances, with a mechanical harmony that makes the car feel less like a commuter vehicle and more like a low-flying aircraft.</p>
 
   <p>Whatever AP camp you're in, whatever year you think is best, we're all part of the tribe that cherishes the way this car was built and how it performs. We aren't collectors of static art pieces or showroom silhouettes. We are curators of a mechanical legend.</p>
 
-  <p>I've spent 20 years and 127,000 miles listening to that mechanical symphony across multiple continents. And after a recent transition to a brand-new factory HOP crate short-block paired with a masterfully built head, I was reminded all over again: we don't drive a wrapper. We drive an engine.</p>
+  <p>I've spent 20 years and 127,000 miles listening to that mechanical symphony across multiple continents. And after a recent transition to a brand-new factory HOP crate short-block paired with a masterfully built head, I was reminded all over again: we don't drive a wrapper. <b>We drive an engine.</b></p>
+
+  <aside class="author-note">
+    <div class="author-note-label">Note from the author</div>
+    <p>These are my personal reflections on owning a Honda S2000. It's intentionally personal, perhaps a bit self-indulgent, but I've tried to be as honest about the ups and downs of owning this masterpiece of engineering. And it's long -- if you'd like to skip to the engine rebuild, jump to Chapter IX.</p>
+  </aside>
 
   <span class="section-eyebrow">Chapter I</span>
   <h2>The Journey of the Chassis: From Suzuka to the Potomac</h2>
@@ -411,7 +800,10 @@
 
   <p>Waiting for it at Brown's Honda dealership in Arlington, Virginia was a recently divorced 32-year-old kid who had spent years dreaming of this exact moment. It was a dream sparked in the final years of the 20th Century when I saw the first conceptual sketches of the SSM roadster in a magazine.</p>
 
-  <div class="photo-placeholder">[ photo placeholder — delivery day, Arlington, 2006 ]</div>
+  <figure class="photo right">
+    <img src="./reddit/img_9341_owners_manuals.jpg" alt="Original owner manuals." data-caption="Original owner manuals.">
+    <figcaption>Original owner manuals — kept for twenty years.</figcaption>
+  </figure>
 
   <p>When the time came to negotiate the price, the gravity of the moment briefly short-circuited my tongue. I inadvertently looked the dealer in the eye and offered $22k, when I had fully meant to say $32k. The room fell into silence. The dealer stared at me, caught off guard, clearly feeling that I had just insulted the engineering value of Honda's crown jewel. We corrected course, the papers were signed, and a choice had to be made about preserving the pristine lines of the trunk. I debated spoiling that sleek rear deck with a factory wing or an XM radio antenna; ultimately, I chose the connection to music beamed from outer space.</p>
 
@@ -437,11 +829,21 @@
 
   <p>Dealing with German bureaucrats is an exercise in encountering people who are surprisingly friendly, yet entirely uncompromising. Navigating their labyrinth required retreating to the local Honda dealership, mobilizing a paper trail directly from Honda corporate to verify the car's pedigree, and proving indisputable ownership.</p>
 
+  <figure class="photo right">
+    <img src="./reddit/img_9425_honda_data_sheet.jpg" alt="Datasheet from Honda, required for German registration." data-caption="Datasheet from Honda, required for German registration.">
+    <figcaption>Datasheet from Honda, required for German registration.</figcaption>
+  </figure>
+
   <p>Then came the physical modifications. Before the move, the S2000 community had already informed me that european regulations mandated a rear fog light, a feature entirely absent from the clean lines of the American rear bumper. Fortunately, Honda Häusler Automobile executed the installation with a level of precision that made the new light look as though it had been integrated into the original Suzuka design.</p>
 
   <p>But where the bureaucracy descended into pure absurdity was the headlights.</p>
 
   <p>The inspection officers halted the registration because my American-spec housings were missing—get ready for it—a tiny, imprinted letter "e" stamped into the plastic to signify European conformity. (There's more too it, feel free to research "asymmetric beam cutoff" and European-spec (EDM) headlight housings.) I balked at the sheer rigidity of the demand. I told them there had to be a better way forward than discarding a pair of perfectly good, flawless factory headlights just to replace them with seemingly identical housings that possessed a different stamp.</p>
+
+  <figure class="photo left">
+    <img src="./reddit/img_0375_german_tuv_light_test.jpg" alt="German TÜV light testing." data-caption="German TÜV light testing.">
+    <figcaption>German TÜV light testing.</figcaption>
+  </figure>
 
   <p>They finally relented, granting me passage to an official TÜV inspection station for an analytical compromise. I had to scientifically prove that my American high beams would not blind an oncoming Porsche and cause it to veer violently off the road. The high beams were fine. The paperwork was stamped, and I was finally handed my coveted "M-" Munich license plate, alongside the car's very first Autobahn <em>Plakette</em>.</p>
 
@@ -450,6 +852,11 @@
   <span class="section-eyebrow">Chapter IV</span>
   <h2>The Laws of the Left Lane</h2>
 
+  <figure class="photo right">
+    <img src="./reddit/img_9080_autobahn_vignette.jpg" alt="Autobahn plaquet" data-caption="Autobahn plaquet">
+    <figcaption>Autobahn <em>Plakette</em>.</figcaption>
+  </figure>
+
   <p>Unleashing a roadster in Germany is a lesson in contradiction. Driving on the Autobahn is, first and foremost, a grueling exercise in patience. Near the cities, the illusion of limitless speed vanishes; you rarely exceed 120 km/h, and there is absolutely no American-style "5 to 10 mph wiggle room" with the speed cameras. You learn to drive exactingly. You learn the golden rules of the territory: never cruise in the left lane (yeah, I did that early on), constantly scan your mirrors for the true lunatics approaching from the horizon at over 200 km/h (a club I later joined), and never, <em>never</em> pass on the right.</p>
 
   <p>Except once.</p>
@@ -457,6 +864,11 @@
   <p>Although there are many stories, two distinct moments from that era remain permanently etched into the chassis' history. The first occurred on an unusually wide, sweeping three-lane stretch of tarmac between Nürnberg and München (the A9). I came over the crest of a hill at 220 km/h in the center lane, only to find a slow-moving Audi stubbornly 'parked' in the far-left lane of an otherwise entirely empty highway. I say 'parked' because when the other car is driving 100 km/h and you're doing 220, it's like driving towards a wall at 120. With closing speeds that high, a significant deceleration and a quick pass in the very right lane spared me an expensive brake job.</p>
 
   <p>I rolled back into my apartment garage, and parked next to my neighbor's BMW 3-Series. Yes, Munich is the heart of BMW-land, and she worked there as an engineer. But despite our different brand loyalties, my Suzuka-built Honda received respect.</p>
+
+  <figure class="photo left">
+    <img src="./reddit/img_3855_german_rego_small.jpg" alt="German Registration document -- the small one." data-caption="German Registration document -- the small one.">
+    <figcaption>German registration document — the small one.</figcaption>
+  </figure>
 
   <p>The second memory is one of pure, adrenaline-fueled survival. Driving south of Stuttgart on a notoriously crash-prone, winding stretch of the A8, my AP2 barely avoided a total catastrophe. Semi-truck drivers in Europe drive dangerously close together, a terrifying habit I have never fully understood.</p>
 
@@ -478,6 +890,11 @@
   <span class="section-eyebrow">Chapter VI</span>
   <h2>Touching the Limits: 243 km/h</h2>
 
+  <figure class="photo right">
+    <img src="./reddit/img_3237_196kph.jpg" alt="Breaking all sorts of German laws using my camera, but surprisingly not the speed limit." data-caption="Breaking all sorts of German laws using my camera, but surprisingly not the speed limit.">
+    <figcaption>Breaking all sorts of German laws using my camera, but surprisingly not the speed limit.</figcaption>
+  </figure>
+
   <p>Speaking of which, since you're all wondering, the absolute top speed my chassis has ever hit is 243 km/h (151 mph), achieved with the top up. It wasn't an easy feat getting it there. The A8 from München to Stuttgart is notoriously bendy, and there are countless zones where the speed limits drop abruptly down to 100 km/h due to noise-abatement regulations (a concept fellow airplane pilots will deeply appreciate).</p>
 
   <p>However, there is a glorious three-lane stretch just west of the Stuttgart airport that features what feels like a 2% downslope. Coming over the crest of that hill with everything my little red ride could muster, I managed to push the engine right near redline. I finally had to back off as the rear end started floating. Remember, I chose the connection to space, so I had no wing to anchor me. I was foolish, I'm sorry mom, but you haven't truly lived until you've felt that close to certain death.</p>
@@ -496,19 +913,33 @@
 
   <p>The unique compromise I had struck with the German authorities over my missing headlight stamps came with a strict condition: I was legally forbidden from ever selling the car while living within the borders of Germany. That was perfectly fine by me. But it meant that when the time inevitably came for my return to the United States, the car would have to take to the sea once more.</p>
 
+  <figure class="photo right">
+    <img src="./reddit/img_3561_departure_from_germany.jpg" alt="Loading the S2000 a second time, this time back to the US." data-caption="Loading the S2000 a second time, this time back to the US.">
+    <figcaption>Loading the S2000 a second time, this time back to the US.</figcaption>
+  </figure>
+
   <p>The process repeated itself. The car was driven back into the safety of an upsized 40-foot container, latched into the darkness of the steel box, and sent on its way.</p>
 
   <p>While its original journey from Virginia had been a relatively straight, transatlantic shot, this time the AP2 was bound for California. I traced its progress on a commercial ship-tracking website, watching the journey unfold across multiple legs. It went aboard at least two different massive container vessels, making tactical logistics stops in Rotterdam and a port along the Iberian Peninsula before setting out across the open Atlantic.</p>
 
   <p>It eventually found its way back to the warm waters of the Caribbean Sea (a region this car has now visited more times than its owner), and headed back toward the locks of the Panama Canal. For those keeping count at home, that marks two distinct transits through the canal, once in each direction. Not many S2000s have transited the Panama Canal twice.</p>
 
-  <div class="photo-placeholder">[ photo placeholder — Marin Headlands, container ship under the Golden Gate ]</div>
-
   <p>As the ship cleared the canal and began its northern trek up the Pacific, I eagerly awaited the return of my mechanical companion. The anticipation was so high that on the day of its arrival, I drove out to the Marin Headlands and stood on the cliffs, watching from above as the massive container ship cut through the water, sailed directly beneath the spans of the Golden Gate Bridge, and maneuvered over to the Port of Oakland. In the years that followed, I would drive this very car across that iconic suspension bridge hundreds of times during my commutes into San Francisco.</p>
 
   <p>My AP2 had finally made it back onto <em>terra firma</em> on the American West Coast. I imagined the crane operator playing Iko Iko in his cab in tribute to the opening scene of <i>Rain Man</i>, as they unloaded the container from the ship. From that point on, I assumed the rest of our journey together would simply be a quiet accumulation of routine miles on the odometer.</p>
 
   <p>Or so I thought.</p>
+
+  <div class="ornament">✦ ✦ ✦</div>
+
+  <div class="sidebar">
+    <div class="sidebar-label">An aside · not posted to Reddit</div>
+    <h2>An Honest Admission on the S2000's Appeal</h2>
+    <p>Allow me a brief aside: When I bought this red roadster in my early thirties, I harbored the completely unfounded belief that driving a car like this would naturally "attract women." After twenty years behind the wheel of the S2000, I can officially confirm that exactly <em>one</em> In-N-Out cashier has ever commented on my car.</p>
+    <p>Instead, the parade of men who want to chat with me about Honda's engineering marvel is seemingly endless. Not to mention, driving it into any modern car dealership today is a continuous exercise in polite rejection: <em>"No, I'm not selling it. I'm just here for something else."</em></p>
+  </div>
+
+  <div class="ornament">✦ ✦ ✦</div>
 
   <span class="section-eyebrow">Chapter IX</span>
   <h2>The Illusion of Simplicity and the Sonoma County Nightmare</h2>
@@ -517,7 +948,12 @@
 
   <p>For the vast majority of our time together, all of my car's maintenance was done more or less on schedule. Occasionally I utilized Honda dealerships, but I usually relied on independent shops.</p>
 
-  <p>That said, as cars age (even machines as fundamentally well-engineered as our S2000s) they begin to require a bit of tender loving care as they approach the 80,000-mile mark. I probably waited too long on a valve adjustment, and the slotted brake rotors I installed were kind of silly. I did okay on some things and waited too long on others. But then I got insanely unlucky.</p>
+    <figure class="photo right">
+    <img src="./reddit/img_9091_broken_gear.png" alt="A bad transmission repair. Ouch!" data-caption="A bad transmission repair. Ouch!">
+    <figcaption>A bad transmission repair. Ouch.</figcaption>
+  </figure>
+
+<p>That said, as cars age (even machines as fundamentally well-engineered as our S2000s) they begin to require a bit of tender loving care as they approach the 80,000-mile mark. I probably waited too long on a valve adjustment, and the slotted brake rotors I installed were kind of silly. I did okay on some things and waited too long on others. But then I got insanely unlucky.</p>
 
   <p>At first, it was just a standard clutch replacement. My regular mechanic wasn't entirely comfortable dropping the transmission on an S2000, so he gave me a recommendation to a specialty shop a few towns south in Sonoma County. Let's just say these guys didn't know the first thing about Hondas, and they weren't honest enough to admit it.</p>
 
@@ -530,16 +966,31 @@
 
   <p>But the tribe looked out for me anyway.</p>
 
-  <p>Another Honda driver—whose name I sadly can no longer recall—spotted me at that Fremont gas station and commented on my red-and-black ride. Frustrated and exhausted by the mechanical gremlins, I opened up to him about my troubles. Without hesitation, he told me I needed to go see Eric Viera out at Japanese Auto Service in Tracy.</p>
+  <p>Another Honda driver—whose name I sadly can no longer recall—spotted me at that Fremont gas station and commented on my red-and-black ride. Frustrated and exhausted by the mechanical gremlins, I opened up to him about my troubles. Without hesitation, he told me I needed to go see <a class="inline-link" href="https://www.instagram.com/jas_motorsports/" target="_blank" rel="noopener">Japanese Auto Service</a> out in Tracy.</p>
 
   <p>Now, from the East Bay, Tracy is a bit of a hike. But I desperately needed someone who could actually diagnose this car. A few days later, I found my way out to the Central Valley.</p>
 
   <span class="section-eyebrow">Chapter XI</span>
   <h2>Finding a Master</h2>
 
-  <p>As profoundly unlucky as I had been with that shop in Sonoma County, the universe paid me back in spades the moment I pulled into Japanese Auto Service. I don't mean for this to sound like a commercial advertisement, but finding a master Honda technician of Eric's caliber and professionalism is a rarity.</p>
+  <figure class="photo right">
+    <img src="./reddit/img_9073_w_eric.jpg" alt="Selfie with my Honda master tech." data-caption="Selfie with my Honda master tech.">
+    <figcaption>With Eric Viera, Honda Master Technician.</figcaption>
+  </figure>
+
+  <p>As profoundly unlucky as I had been with that shop in Sonoma County, the universe paid me back in spades the moment I pulled into Japanese Auto Service. I don't mean for this to sound like a commercial advertisement, but finding a master Honda technician of Eric Viera's caliber and professionalism is a rarity.</p>
+
+  <figure class="photo left">
+    <img src="./reddit/img_9067_under_engine.jpg" alt="Under the Engine." data-caption="Under the Engine.">
+    <figcaption>Under the engine.</figcaption>
+  </figure>
 
   <p>Eric meticulously took apart the mangled transmission, located the cracked gear left behind by the previous shop, fixed everything flawlessly, and had me back on the road with a proper new OEM clutch. In the process, he had to extract a very new, very expensive, and completely incompatible aftermarket unit that the Sonoma County shop had thrown at the car; it still sits in my garage as a reminder for me to do my due diligence.</p>
+
+  <figure class="photo right">
+    <img src="./reddit/img_9060_alignment_rear.jpg" alt="Wheel alignment." data-caption="Wheel alignment.">
+    <figcaption>Wheel alignment.</figcaption>
+  </figure>
 
   <p>Before this narrative spins entirely into an exhaustive recounting of my maintenance receipts, I will fast-forward to say: this transmission rescue was only the prologue. Within the next year, my reliable, 117,000-mile, world-traveling 2006 S2000 would eventually undergo a complete heart transplant—emerging on the other side with one of the youngest, factory-fresh engines in the global S2000 fleet.</p>
 
@@ -553,18 +1004,26 @@
   <span class="section-eyebrow">Chapter XIII</span>
   <h2>The Last Heart Donor?</h2>
 
+  <figure class="photo right">
+    <img src="./reddit/img_9096_shortblock_pic.jpg" alt="A new engine @ 117k miles, last one in US in Dec. 2024." data-caption="A new engine @ 117k miles, last one in US in Dec. 2024.">
+    <figcaption>A new engine at 117k miles — the last one for sale in the US, December 2024.</figcaption>
+  </figure>
+
   <p>Now in Eric's shop, my S2k on figurative life support, we had to find a heart donor (a full 15 years after Honda built the last engine at the factory). I don't know how he did it, how many strings were pulled, but there was one last F22C1 short-block still for sale on ICB Motorsport. And we got it! We're pretty sure it was the last one available for sale in the US. Now, there may be a few crated engines sitting in collectors' garages, though this engine deserves to be driven. The likelihood this build is the last OEM install in the US, perhaps the world, is high—and at the very least, it's a very young heart.</p>
 
   <p>For the uninitiated, the S2000's engine is special, and its legendary factory reliability is exactly why these blocks became so rare. For decades, brand-new assemblies just sat on dealer shelves gathering dust because nobody actually needed a replacement engine under warranty—they simply refused to die. Fast-forward to today, and these power plants are in such high demand that people routinely steal these cars just to rip the engines out (another crime against humanity).</p>
-
-  <div class="photo-placeholder">[ photo placeholder — the crate, unpacked at Japanese Auto Service ]</div>
 
   <p>When Eric unpacked the crate, I suspect it was a bit of a religious experience. In over a decade of being a Honda Master Technician, he'd never seen a brand-new F22C1 short-block, let alone the last one in the US. The artist got to work. But an engine needs more than a heartbeat; it needs to breathe. We had our pristine brand-new short-block, but now we needed a top-end, and finding an AP2 cylinder head was going to be its own quest.</p>
 
   <span class="section-eyebrow">Chapter XIV</span>
   <h2>An AP1 Head on an AP2 Short-block</h2>
 
-  <p>Once again, the community came to the rescue. Eric and his partner Dora frequent the NorCal racing circuits, and they know Miller Le—a legend in his own right. Miller builds heads like Stradivari builds violins. He had an AP1 top-end built for racing (Brian Crower stainless steel valves, a 3-angle valve job, new OEM valve guides, seals and keepers, with the head resurfaced and hot tanked). I'm the first to admit, I don't know what any of that means.</p>
+  <figure class="photo right">
+    <img src="./reddit/img_9142_all_doors_open.jpg" alt="The S2000 with all its doors open." data-caption="The S2000 with all its doors open.">
+    <figcaption>The S2000 with all its doors open.</figcaption>
+  </figure>
+
+  <p>Once again, the community came to the rescue. Eric and his partner Dora frequent the NorCal racing circuits, and they know <a class="inline-link" href="https://www.instagram.com/2boost2leeee/" target="_blank" rel="noopener">Miller Le</a>—a legend in his own right. Miller builds heads like Stradivari builds violins. He had an AP1 top-end built for racing (Brian Crower stainless steel valves, a 3-angle valve job, new OEM valve guides, seals and keepers, with the head resurfaced and hot tanked). I'm the first to admit, I don't know what any of that means.</p>
 
   <p>When Eric and Miller first told me about the hybrid build, I was a little concerned, but I trusted their judgment. In time, I've started to realize that this "AP1.5" setup, running on the stock ECU, is the ultimate choice for my mission. It feels absolutely fantastic.</p>
 
@@ -577,20 +1036,117 @@
 
   <p>It seems a little insane to get sentimental about machines, but I have yet to encounter an S2000 owner who doesn't love this car. I've also never met a former owner who doesn't regret selling theirs, and I regularly meet owners of modern high-performance sports cars who wish they had an S2000 in their garage as well. As a professional product manager, I can tell you that a business simply cannot buy this kind of lifelong loyalty with marketing spend or product gimmicks.</p>
 
+  <figure class="photo left">
+    <img src="./reddit/img_9159_contact_atc.jpg" alt="Contact ATC." data-caption="Contact ATC.">
+    <figcaption>Contact ATC.</figcaption>
+  </figure>
+
   <p>I recently read about Honda's first annual financial loss, and I feel a great deal of sympathy for the employees. I'm not waiting on a new S2000 to save the company—although a modern machine with that same spirit would be amazing. One annual loss is blip on the radar, and Honda hasn't forgotten who they are. With the launch of their Honda Heritage Works program, the factory is getting serious about factory parts support for their classic sports platforms. They recognize the legacy they chaperone. Until that program fully scales to the S2000, owners like me, and mechanics like Eric and Miller, will keep honoring the legacy from the trenches.</p>
 
   <p>As I prepare to pass my S2000 to its next owner — in part because it's hard to fit a driver and two kids into my flight of two — I'm certain I'll feel the exact same phantom ache that every former owner feels. The looming regret is already here. At least it inspired this retrospective. But more than anything, it has been an absolute privilege to stand as a steward of this mechanical masterpiece for the last 20 years.</p>
 
+  <figure class="photo right">
+    <img src="./reddit/img_9345_s2000_marketing_finish_line.jpg" alt="I never thought I'd reach the finish line, but after 20 years, here it is." data-caption="I never thought I'd reach the finish line, but after 20 years, here it is.">
+    <figcaption>I never thought I'd reach the finish line, but after 20 years, here it is.</figcaption>
+  </figure>
+
   <p>Here in California, my S2000 conquered the Pacific Coast Highway, Lombard Street, the Lake Tahoe shoreline, Donner Pass, and the lovely curves of the roads near Lake Berryessa. And I hope the next owner adds many more domestic, and maybe international, locations to its flight log.</p>
 
-  <div class="sidebar-divider">Sidebar · Web Only</div>
+  <!-- Photo Gallery -->
+  <section class="gallery-intro">
+    <span class="section-eyebrow">Gallery</span>
+    <h2>Twenty Years in Photographs</h2>
+    <p>A visual archive of the journey — from Arlington delivery day through München, Rotterdam, the Golden Gate, and Tracy. Click any image to view full size.</p>
+  </section>
 
-  <div class="sidebar">
-    <div class="sidebar-label">An aside · not posted to Reddit</div>
-    <h2>An Honest Admission on the S2000's Appeal</h2>
-    <p>Allow me a brief aside: When I bought this red roadster in my early thirties, I harbored the completely unfounded belief that driving a car like this would naturally "attract women." After twenty years behind the wheel of the S2000, I can officially confirm that exactly <em>one</em> In-N-Out cashier has ever commented on my car.</p>
-    <p>Instead, the parade of men who want to chat with me about Honda's engineering marvel is seemingly endless. Not to mention, driving it into any modern car dealership today is a continuous exercise in polite rejection: <em>"No, I'm not selling it. I'm just here for something else."</em></p>
+  <div class="gallery-grid">
+    <!-- Glamour: exterior shots -->
+    <figure><img src="./glamour/img_9115_front_profile.jpg" alt="Front profile" data-caption="Front profile" loading="lazy"></figure>
+    <figure><img src="./glamour/img_9113_rear_profile.jpg" alt="Rear profile" data-caption="Rear profile" loading="lazy"></figure>
+    <figure><img src="./glamour/img_9124_s2000_badge.jpg" alt="S2000 badge" data-caption="S2000 badge" loading="lazy"></figure>
+    <figure><img src="./glamour/img_9146_mirror.jpg" alt="Mirror detail" data-caption="Mirror detail" loading="lazy"></figure>
+    <figure><img src="./glamour/img_9197_secret_glovebox.jpg" alt="The secret glovebox" data-caption="The secret glovebox" loading="lazy"></figure>
+    <figure><img src="./glamour/img_9216_sunset_w_plane.jpg" alt="Sunset at the airport" data-caption="Sunset, at the airport" loading="lazy"></figure>
+
+    <!-- General: purchase and delivery -->
+    <figure><img src="./general/img_9343_s2000_marketing_cover.jpg" alt="S2000 marketing brochure cover" data-caption="Original S2000 marketing brochure — cover" loading="lazy"></figure>
+    <figure><img src="./general/img_9344_s2000_marketing_intro.jpg" alt="S2000 marketing brochure interior" data-caption="Original S2000 marketing brochure — introduction" loading="lazy"></figure>
+    <figure><img src="./reddit/img_9345_s2000_marketing_finish_line.jpg" alt="The S2000 finish line" data-caption="The S2000 finish line page from the marketing brochure" loading="lazy"></figure>
+    <figure><img src="./general/img_9351_purchase_assessories.jpg" alt="Original accessories" data-caption="Original purchase accessories" loading="lazy"></figure>
+    <figure><img src="./general/img_9354_keys.jpg" alt="Original keys" data-caption="Original keys" loading="lazy"></figure>
+    <figure><img src="./general/img_9408_purchase_doc.jpg" alt="Original purchase document" data-caption="Original purchase document — Arlington, 2006" loading="lazy"></figure>
+    <figure><img src="./general/img_9355_datasheet_invoice.jpg" alt="Data sheet invoice" data-caption="Datasheet invoice" loading="lazy"></figure>
+
+    <!-- The German era -->
+    <figure><img src="./general/img_9412_msc_shipping_invoice.jpg" alt="MSC shipping invoice" data-caption="MSC shipping invoice — first ocean crossing" loading="lazy"></figure>
+    <figure><img src="./general/img_9414_us_customs_import_declaration.jpg" alt="US customs import declaration" data-caption="US customs import declaration" loading="lazy"></figure>
+    <figure><img src="./general/img_0273_arrival_in_germany.jpg" alt="Arrival in Germany" data-caption="Arrival in Germany" loading="lazy"></figure>
+    <figure><img src="./general/img_0422_s2000_in_germany.jpg" alt="S2000 in Germany" data-caption="S2000 in Germany" loading="lazy"></figure>
+    <figure><img src="./general/img_9424_german_inspection.jpg" alt="German inspection" data-caption="German inspection" loading="lazy"></figure>
+    <figure><img src="./general/img_9426_german_tuv_inspection.jpg" alt="German TÜV inspection" data-caption="German TÜV inspection" loading="lazy"></figure>
+    <figure><img src="./general/img_0376_german_light_test_lights.jpg" alt="German light test — lights" data-caption="German light test — lights" loading="lazy"></figure>
+    <figure><img src="./general/img_9420_german_rego_exception_invoice.jpg" alt="German rego exception invoice" data-caption="German registration exception invoice" loading="lazy"></figure>
+    <figure><img src="./general/img_9421_exception_documentatation.jpg" alt="Exception documentation" data-caption="Exception documentation" loading="lazy"></figure>
+    <figure><img src="./general/img_9427_german_rego_permission_exception.jpg" alt="German rego permission exception" data-caption="German registration permission exception" loading="lazy"></figure>
+    <figure><img src="./general/img_9429_german_car_retrofit_invoice1.jpg" alt="German retrofit invoice 1" data-caption="German retrofit invoice (1 of 2)" loading="lazy"></figure>
+    <figure><img src="./general/img_9431_german_car_retrofit_invoice2.jpg" alt="German retrofit invoice 2" data-caption="German retrofit invoice (2 of 2)" loading="lazy"></figure>
+    <figure><img src="./general/img_3858_german_rego_large.jpg" alt="German rego large" data-caption="German registration document — the large one" loading="lazy"></figure>
+
+    <!-- European roads and travels -->
+    <figure><img src="./general/img_1291_german_alps.jpg" alt="German Alps" data-caption="The German Alps" loading="lazy"></figure>
+    <figure><img src="./general/img_1587_german_taunus.jpg" alt="German Taunus" data-caption="The Taunus mountains" loading="lazy"></figure>
+    <figure><img src="./general/img_9433_german_export_doc.jpg" alt="German export document" data-caption="German export document" loading="lazy"></figure>
+
+    <!-- Return to the US -->
+    <figure><img src="./general/s2000_next_to_container.jpg" alt="S2000 next to shipping container" data-caption="Next to the 40-foot container leaving Virginia in 2010" loading="lazy"></figure>
+    <figure><img src="./general/img_3755_arrival_under_ggb_w_hans.jpg" alt="Arrival under GGB with Hans" data-caption="Arrival under the Golden Gate — with the owner watching from the Marin Headlands" loading="lazy"></figure>
+    <figure><img src="./general/img_6021_over_ggb.jpg" alt="Over the Golden Gate Bridge" data-caption="Over the Golden Gate Bridge" loading="lazy"></figure>
+
+    <!-- California life -->
+    <figure><img src="./general/img_3872_california_lake.jpg" alt="California lake" data-caption="A California lake" loading="lazy"></figure>
+    <figure><img src="./general/img_4342_california_cable_car.jpg" alt="California cable car" data-caption="San Francisco, cable car in view" loading="lazy"></figure>
+    <figure><img src="./general/img_5312_long_hair.jpg" alt="Top down, the S2000 is a lot of 'fun' with hair long" data-caption="Top down, the S2000 is a lot of 'fun' with hair long" loading="lazy"></figure>
+    <figure><img src="./general/img_0521_4seats_kids.jpg" alt="Who says it's a two-seater" data-caption="Who says it's a two-seater" loading="lazy"></figure>
+    <figure><img src="./general/img_9077_owner_top_down.jpg" alt="Owner, top down" data-caption="Top down" loading="lazy"></figure>
+    <figure><img src="./general/img_9734_convertible_cover.jpg" alt="Convertible cover" data-caption="Under the convertible cover" loading="lazy"></figure>
+    <figure><img src="./general/ca_smog.jpg" alt="California smog check" data-caption="California smog check" loading="lazy"></figure>
+
+    <!-- The shop / mechanical work -->
+    <figure><img src="./general/img_9058_alignment.jpg" alt="Alignment" data-caption="On the alignment rack at JAS" loading="lazy"></figure>
+    <figure><img src="./general/img_9068_under_exhaust.jpg" alt="Under exhaust" data-caption="Under the exhaust" loading="lazy"></figure>
+    <figure><img src="./general/img_9071_under_rear.jpg" alt="Under rear" data-caption="Under the rear" loading="lazy"></figure>
+    <figure><img src="./general/img_9072_rear_jas.jpg" alt="Rear at JAS" data-caption="Rear view at Japanese Auto Service" loading="lazy"></figure>
+    <figure><img src="./general/img_9093_engine_listing.png" alt="Engine listing" data-caption="The ICB Motorsport listing — the last F22C1 short-block in the US" loading="lazy"></figure>
+    <figure><img src="./general/img_9098_shortblock_pic2.jpg" alt="Shortblock, second angle" data-caption="The crate short-block, second angle" loading="lazy"></figure>
+
+    <!-- The odometer at retrospective time -->
+    <figure><img src="./general/img_0012_odo_2026_07_10.jpg" alt="Odometer, July 2026" data-caption="Odometer reading — July 10, 2026" loading="lazy"></figure>
   </div>
+
+  <!-- Contact Section -->
+  <section class="contact-section">
+    <span class="section-eyebrow">Contact</span>
+    <h2>Get in touch</h2>
+    <p>I'd love feedback on what you thought of this retrospective, especially if you liked it. My "Panamax" S2000 already has a number of interested buyers, but if you'd like to post on Reddit or email me what you think it's worth, that'll make for interesting racetrack conversation.</p>
+    <p>Email: <a href="mailto:hans@oriensflight.com">hans@oriensflight.com</a></p>
+  </section>
+
+  <!-- Technical Details -->
+  <section class="tech-details">
+    <span class="section-eyebrow">Technical Details</span>
+    <h2>By the Numbers</h2>
+    <dl class="tech-list">
+      <div><dt>Current odometer</dt><dd>127,690 miles</dd></div>
+      <div><dt>New short block &amp; rebuild</dt><dd>117,791 miles</dd></div>
+      <div><dt>Panama Canal crossings</dt><dd>Two</dd></div>
+      <div><dt>Pacific sailings</dt><dd>Two</dd></div>
+      <div><dt>Atlantic sailings</dt><dd>Three</dd></div>
+      <div><dt>Visits to the Caribbean</dt><dd>Two</dd></div>
+      <div><dt>Top speed, top down</dt><dd>Just under 200 km/h</dd></div>
+      <div><dt>Owners</dt><dd>One</dd></div>
+      <div><dt>Countries visited</dt><dd>Japan, USA, Germany,<br>Italy, Austria, Switzerland,<br>Liechtenstein</dd></div>
+    </dl>
+  </section>
 
   <footer class="colophon">
     <div class="colophon-mark">✦ ✦ ✦</div>
@@ -604,6 +1160,98 @@
   </footer>
 
 </article>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" role="dialog" aria-hidden="true">
+  <button class="lightbox-close" aria-label="Close">Close · Esc</button>
+  <button class="lightbox-nav lightbox-prev" aria-label="Previous image">‹</button>
+  <img id="lightbox-img" src="" alt="">
+  <div class="lightbox-caption" id="lightbox-caption"></div>
+  <div class="lightbox-counter" id="lightbox-counter"></div>
+  <button class="lightbox-nav lightbox-next" aria-label="Next image">›</button>
+</div>
+
+<script>
+(function() {
+  // Collect every clickable image in the article and gallery
+  const imgs = Array.from(document.querySelectorAll(
+    'figure.hero-image img, figure.photo img, .gallery-grid img'
+  ));
+  if (!imgs.length) return;
+
+  const lightbox = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lightbox-img');
+  const lbCap = document.getElementById('lightbox-caption');
+  const lbCounter = document.getElementById('lightbox-counter');
+  const btnClose = lightbox.querySelector('.lightbox-close');
+  const btnPrev = lightbox.querySelector('.lightbox-prev');
+  const btnNext = lightbox.querySelector('.lightbox-next');
+
+  let currentIndex = 0;
+
+  function show(i) {
+    if (i < 0) i = imgs.length - 1;
+    if (i >= imgs.length) i = 0;
+    currentIndex = i;
+    const src = imgs[i].getAttribute('src');
+    const cap = imgs[i].getAttribute('data-caption') ||
+                imgs[i].getAttribute('alt') || '';
+    lbImg.src = src;
+    lbImg.alt = cap;
+    lbCap.textContent = cap;
+    lbCounter.textContent = (i + 1) + ' / ' + imgs.length;
+  }
+
+  function open(i) {
+    show(i);
+    lightbox.classList.add('active');
+    lightbox.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function close() {
+    lightbox.classList.remove('active');
+    lightbox.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  imgs.forEach((img, i) => {
+    img.addEventListener('click', function(e) {
+      e.stopPropagation();
+      open(i);
+    });
+  });
+
+  btnClose.addEventListener('click', close);
+
+  btnPrev.addEventListener('click', function(e) {
+    e.stopPropagation();
+    show(currentIndex - 1);
+  });
+
+  btnNext.addEventListener('click', function(e) {
+    e.stopPropagation();
+    show(currentIndex + 1);
+  });
+
+  // Click on background (not on image/caption) closes
+  lightbox.addEventListener('click', function(e) {
+    if (e.target === lightbox) close();
+  });
+
+  // Prevent clicks on image/caption from bubbling to background
+  lbImg.addEventListener('click', function(e) { e.stopPropagation(); });
+  lbCap.addEventListener('click', function(e) { e.stopPropagation(); });
+  lbCounter.addEventListener('click', function(e) { e.stopPropagation(); });
+
+  document.addEventListener('keydown', function(e) {
+    if (!lightbox.classList.contains('active')) return;
+    if (e.key === 'Escape') close();
+    else if (e.key === 'ArrowLeft') show(currentIndex - 1);
+    else if (e.key === 'ArrowRight') show(currentIndex + 1);
+  });
+})();
+</script>
 
 </body>
 </html>
