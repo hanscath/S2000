@@ -329,6 +329,27 @@
     padding-left: 0.4em;
   }
 
+  /* Publication date stamp */
+  .date-stamp {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    text-align: center;
+    margin: 32px 0;
+  }
+  .date-stamp::before,
+  .date-stamp::after {
+    content: '';
+    display: inline-block;
+    width: 40px;
+    height: 1px;
+    background: var(--rule);
+    vertical-align: middle;
+    margin: 0 14px;
+  }
+
   /* Hero image below masthead */
   .hero-image {
     margin: 0 auto 60px;
@@ -429,6 +450,12 @@
     margin-right: 28px;
     margin-left: -8px;
     clear: left;
+  }
+  figure.photo.large { 
+    max-width: 320px;
+  }
+  figure.photo.xlarge { 
+    max-width: 380px;
   }
   figure.photo img {
     width: 100%;
@@ -808,13 +835,15 @@
      style="vertical-align: -4px; margin: 0 0px;"> · Arlington · München · San Francisco</div>
   </header>
 
+  <div class="date-stamp">Published ✦ July 28, 2026</div>
+
   <figure class="hero-image">
     <img src="./reddit/img_3762_arrival_under_ggb.jpg" alt="Sailing under the Golden Gate, after crossing the Panama Canal a 2nd time." data-caption="Sailing under the Golden Gate, after crossing the Panama Canal a 2nd time.">
     <figcaption>My S2000 sailing under the Golden Gate, after crossing the Panama Canal for the second time.</figcaption>
   </figure>
 
   <section class="video-embed">
-    <div class="video-eyebrow">Walk-around</div>
+    <div class="video-eyebrow">Walk-around & Global Reception</div>
     <!--
     <div class="video-frame">
       <iframe
@@ -826,7 +855,8 @@
         allowfullscreen>
       </iframe>
     </div> -->
-    <div class="video-caption">A walk-around of the car — <a href="https://youtu.be/slCK8-8vq1o" target="_blank" rel="noopener">watch on YouTube</a> - premieres at 7am PDT on July 28th.</div>
+    <div class="video-caption">A walk-around of the car — <a href="https://youtu.be/slCK8-8vq1o" target="_blank" rel="noopener">watch on YouTube</a>.</div>
+    <div class="video-caption"><a href="https://www.reddit.com/r/S2000/comments/1v8xnmu/sailing_under_the_golden_gate_my_20year_2ocean/" target="_blank" rel="noopener">Link to the Reddit post and comments on r/S2000</a></div>
   </section>
 
   <div class="ornament">✦ ✦ ✦</div>
@@ -835,12 +865,12 @@
 
   <p>The body is lovely. But the styling is the cherry on top. Let me explain.</p>
 
-  <figure class="photo left">
+  <figure class="photo left large">
     <img src="./reddit/img_9192_sunset_pic.jpg" alt="A world-traveling dream car for 20 years and 127k miles." data-caption="A world-traveling dream car for 20 years and 127k miles.">
     <figcaption>A world-traveling dream car for 20 years and 127k miles.</figcaption>
   </figure>
 
-  <p>Before I became a long-term steward of my 2006 AP2, I used to be a docent at the Smithsonian's National Air &amp; Space Museum. When you spend enough time around the history of flight, explaining winged artifacts to visitors on the floor of the Udvar-Hazy Center, you begin to realize that the most important aircraft in human history were never defined by their outer skins. Dedicated mechanics get it, and venture under the entrance ramp to marvel at the engines on display.</p>
+  <p>Before I became a long-term steward of my 2006 AP2, I used to be a docent at the Smithsonian's National Air &amp; Space Museum. When you spend enough time around the history of flight, explaining winged artifacts to visitors on the floor of the <a class="inline-link" href="https://airandspace.si.edu/visit/udvar-hazy-center" target="_blank" rel="noopener">Udvar-Hazy Center</a>, you begin to realize that the most important aircraft in human history were never defined by their outer skins. Dedicated mechanics get it, and venture under the entrance ramp to marvel at the engines on display.</p>
 
   <p>Iconic flying machines were defined by what propelled them.</p>
 
@@ -850,7 +880,7 @@
 
   <p>That is the lens through which we have to look at this car. Those of us who have been lucky enough to drive the S2000 know it's the engine, whether the F20C or the F22C1, that makes this car special. Yes, it's a car engine not a turbojet, but this heart is the reason every driver loves it, and why it commands a kind of reverence that few modern sports cars ever achieve. Even former SR-71 pilot docents talk about the propulsion system.</p>
 
-  <figure class="photo right">
+  <figure class="photo right xlarge">
     <img src="./reddit/img_9178_planes_and_tower.jpg" alt="If only the S2000 could fly." data-caption="If only the S2000 could fly.">
     <figcaption>If only the S2000 could fly.</figcaption>
   </figure>
@@ -913,7 +943,7 @@
 
   <p>The inspection officers halted the registration because my American-spec housings were missing—get ready for it—a tiny, imprinted letter "e" stamped into the plastic to signify European conformity. (There's more too it, feel free to research "asymmetric beam cutoff" and European-spec (EDM) headlight housings.) I balked at the sheer rigidity of the demand. I told them there had to be a better way forward than discarding a pair of perfectly good, flawless factory headlights just to replace them with seemingly identical housings that possessed a different stamp.</p>
 
-  <figure class="photo left">
+  <figure class="photo left xlarge">
     <img src="./reddit/img_0375_german_tuv_light_test.jpg" alt="German TÜV light testing." data-caption="German TÜV light testing.">
     <figcaption>German TÜV light testing.</figcaption>
   </figure>
@@ -938,7 +968,7 @@
 
   <p>I rolled back into my apartment garage, and parked next to my neighbor's BMW 3-Series. Yes, Munich is the heart of BMW-land, and she worked there as an engineer. But despite our different brand loyalties, my Suzuka-built Honda received respect.</p>
 
-  <figure class="photo left">
+  <figure class="photo left xlarge">
     <img src="./reddit/img_3855_german_rego_small.jpg" alt="German Registration document -- the small one." data-caption="German Registration document -- the small one.">
     <figcaption>German registration document — the small one.</figcaption>
   </figure>
@@ -970,7 +1000,7 @@
 
   <p>Speaking of which, since you're all wondering, the absolute top speed my chassis has ever hit is 243 km/h (151 mph), achieved with the top up. It wasn't an easy feat getting it there. The A8 from München to Stuttgart is notoriously bendy, and there are countless zones where the speed limits drop abruptly down to 100 km/h due to noise-abatement regulations (a concept fellow airplane pilots will deeply appreciate).</p>
 
-  <p>However, there is a glorious three-lane stretch just west of the Stuttgart airport that features what feels like a 2% downslope. Coming over the crest of that hill with everything my little red ride could muster, I managed to push the engine right near redline. I finally had to back off as the rear end started floating. Remember, I chose the connection to space, so I had no wing to anchor me. I was foolish, I'm sorry mom, but you haven't truly lived until you've felt that close to certain death.</p>
+  <p>However, there is a glorious three-lane stretch just east of the Stuttgart airport that features what feels like a 2% downslope. Coming over the crest of that hill with everything my little red ride could muster, I managed to push the engine right near redline. I finally had to back off as the rear end started floating. Remember, I chose the connection to space, so I had no wing to anchor me. I was foolish, I'm sorry mom, but you haven't truly lived until you've felt that close to certain death.</p>
 
   <p>Top-down, with the tonneau cover, I think the absolute limit of my courage was 210 km/h (130 mph). At those velocities, even with the windows rolled all the way up, the wind shear is so terrifyingly loud and the sudden, visceral realization that you don't possess a full roll cage keeps your foot from stepping down any further.</p>
 
@@ -986,7 +1016,7 @@
 
   <p>The unique compromise I had struck with the German authorities over my missing headlight stamps came with a strict condition: I was legally forbidden from ever selling the car while living within the borders of Germany. That was perfectly fine by me. But it meant that when the time inevitably came for my return to the United States, the car would have to take to the sea once more.</p>
 
-  <figure class="photo right">
+  <figure class="photo right xlarge">
     <img src="./reddit/img_3561_departure_from_germany.jpg" alt="Loading the S2000 a second time, this time back to the US." data-caption="Loading the S2000 a second time, this time back to the US.">
     <figcaption>Loading the S2000 a second time, this time back to the US.</figcaption>
   </figure>
@@ -1008,8 +1038,8 @@
   <div class="sidebar">
     <div class="sidebar-label">An aside · not posted to Reddit</div>
     <h2>An Honest Admission on the S2000's Appeal</h2>
-    <p>Allow me a brief aside: When I bought this red roadster in my early thirties, I harbored the completely unfounded belief that driving a car like this would naturally "attract women." After twenty years behind the wheel of the S2000, I can officially confirm that exactly <em>one</em> In-N-Out cashier has ever commented on my car.</p>
-    <p>Instead, the parade of men who want to chat with me about Honda's engineering marvel is seemingly endless. Not to mention, driving it into any modern car dealership today is a continuous exercise in polite rejection: <em>"No, I'm not selling it. I'm just here for something else."</em></p>
+    <p>When I bought this red roadster in my early thirties, I harbored the completely unfounded belief that driving a car like this would naturally "attract women." After twenty years behind the wheel of the S2000, I can officially confirm that exactly <em>one</em> In-N-Out cashier has ever commented on my car.</p>
+    <p>Instead, the parade of men who want to chat with me about Honda's engineering marvel is seemingly endless. Not to mention, driving it into any modern car dealership today is a continuous exercise in polite rejection: <em>"No, I'm not selling it. I'm here for something else."</em></p>
   </div>
 
   <div class="ornament">✦ ✦ ✦</div>
@@ -1046,9 +1076,9 @@
   <span class="section-eyebrow">Chapter XI</span>
   <h2>Finding a Master</h2>
 
-  <figure class="photo right">
+  <figure class="photo right xlarge">
     <img src="./reddit/img_9073_w_eric.jpg" alt="Selfie with my Honda master tech." data-caption="Selfie with my Honda master tech.">
-    <figcaption>With Eric Viera, Honda Master Technician.</figcaption>
+    <figcaption>With Eric Viera, Master Honda Technician.</figcaption>
   </figure>
 
   <p>As profoundly unlucky as I had been with that shop in Sonoma County, the universe paid me back in spades the moment I pulled into Japanese Auto Service. I don't mean for this to sound like a commercial advertisement, but finding a master Honda technician of Eric Viera's caliber and professionalism is a rarity.</p>
@@ -1077,7 +1107,7 @@
   <span class="section-eyebrow">Chapter XIII</span>
   <h2>The Last Heart Donor?</h2>
 
-  <figure class="photo right">
+  <figure class="photo right xlarge">
     <img src="./reddit/img_9096_shortblock_pic.jpg" alt="A new engine @ 117k miles, last one in US in Dec. 2024." data-caption="A new engine @ 117k miles, last one in US in Dec. 2024.">
     <figcaption>A new engine at 117k miles — the last one for sale in the US, December 2024.</figcaption>
   </figure>
@@ -1091,7 +1121,7 @@
   <span class="section-eyebrow">Chapter XIV</span>
   <h2>An AP1 Head on an AP2 Short-block</h2>
 
-  <figure class="photo right">
+  <figure class="photo right xlarge">
     <img src="./reddit/img_9142_all_doors_open.jpg" alt="The S2000 with all its doors open." data-caption="The S2000 with all its doors open.">
     <figcaption>The S2000 with all its doors open.</figcaption>
   </figure>
@@ -1109,27 +1139,35 @@
 
   <p>It seems a little insane to get sentimental about machines, but I have yet to encounter an S2000 owner who doesn't love this car. I've also never met a former owner who doesn't regret selling theirs, and I regularly meet owners of modern high-performance sports cars who wish they had an S2000 in their garage as well. As a professional product manager, I can tell you that a business simply cannot buy this kind of lifelong loyalty with marketing spend or product gimmicks.</p>
 
-  <figure class="photo left">
+  <figure class="photo left xlarge">
     <img src="./reddit/img_9159_contact_atc.jpg" alt="Contact ATC." data-caption="Contact ATC.">
     <figcaption>Contact ATC.</figcaption>
   </figure>
 
-  <p>I recently read about Honda's first annual financial loss, and I feel a great deal of sympathy for the employees. I'm not waiting on a new S2000 to save the company—although a modern machine with that same spirit would be amazing. One annual loss is blip on the radar, and Honda hasn't forgotten who they are. With the launch of their Honda Heritage Works program, the factory is getting serious about factory parts support for their classic sports platforms. They recognize the legacy they chaperone. Until that program fully scales to the S2000, owners like me, and mechanics like Eric and Miller, will keep honoring the legacy from the trenches.</p>
+  <p>I recently read about Honda's first annual financial loss, and I feel a great deal of sympathy for the employees. I'm not waiting on a new S2000 to save the company—although a modern machine with that same spirit would be amazing. One annual loss is a blip on the radar, and Honda hasn't forgotten who they are. With the launch of their Honda Heritage Works program, the factory is getting serious about factory parts support for their classic sports platforms. They recognize the legacy they chaperone. Until that program fully scales to the S2000, owners like me, and mechanics like Eric and Miller, will keep honoring the legacy from the trenches.</p>
 
-  <p>As I prepare to pass my S2000 to its next owner — in part because it's hard to fit a driver and two kids into my flight of two — I'm certain I'll feel the exact same phantom ache that every former owner feels. The looming regret is already here. At least it inspired this retrospective. But more than anything, it has been an absolute privilege to stand as a steward of this mechanical masterpiece for the last 20 years.</p>
-
-  <figure class="photo right">
+  <figure class="photo right large">
     <img src="./reddit/img_9345_s2000_marketing_finish_line.jpg" alt="I never thought I'd reach the finish line, but after 20 years, here it is." data-caption="I never thought I'd reach the finish line, but after 20 years, here it is.">
     <figcaption>I never thought I'd reach the finish line, but after 20 years, here it is.</figcaption>
   </figure>
 
+  <p>As I prepare to pass my S2000 to its next owner — in part because it's hard to fit a driver and two kids into my flight of two — I'm certain I'll feel the exact same phantom ache that every former owner feels. The looming regret is already here. At least it inspired this retrospective. But more than anything, it has been an absolute privilege to stand as a steward of this mechanical masterpiece for the last 20 years.</p>
+
   <p>Here in California, my S2000 conquered the Pacific Coast Highway, Lombard Street, the Lake Tahoe shoreline, Donner Pass, and the lovely curves of the roads near Lake Berryessa. And I hope the next owner adds many more domestic, and maybe international, locations to its flight log.</p>
+
+  <!-- Contact Section -->
+  <section class="contact-section">
+    <span class="section-eyebrow">Contact</span>
+    <h2>Get in touch</h2>
+    <p>I'd love feedback on what you thought of this retrospective, especially if you liked it. My "Panamax" S2000 already has a number of interested buyers, but if you'd like to post on Reddit or email me what you think it's worth, that'll make for interesting racetrack conversation.</p>
+    <p>Email: <a href="mailto:hans@oriensflight.com">hans@oriensflight.com</a></p>
+  </section>
 
   <!-- Photo Gallery -->
   <section class="gallery-intro">
     <span class="section-eyebrow">Gallery</span>
     <h2>Twenty Years in Photographs</h2>
-    <p>A visual archive of the journey — from Arlington delivery day through München, Rotterdam, the Golden Gate, and Tracy. Click any image to view full size.</p>
+    <p>A visual archive of the journey — from Arlington delivery day paperwork through München arrival, Alpine roads, the Golden Gate, and Tracy. Click any image to view full size.</p>
   </section>
 
   <div class="gallery-grid">
@@ -1196,14 +1234,6 @@
     <figure><img src="./general/img_0012_odo_2026_07_10.jpg" alt="Odometer, July 2026" data-caption="Odometer reading — July 10, 2026" loading="lazy"></figure>
   </div>
 
-  <!-- Contact Section -->
-  <section class="contact-section">
-    <span class="section-eyebrow">Contact</span>
-    <h2>Get in touch</h2>
-    <p>I'd love feedback on what you thought of this retrospective, especially if you liked it. My "Panamax" S2000 already has a number of interested buyers, but if you'd like to post on Reddit or email me what you think it's worth, that'll make for interesting racetrack conversation.</p>
-    <p>Email: <a href="mailto:hans@oriensflight.com">hans@oriensflight.com</a></p>
-  </section>
-
   <!-- Technical Details -->
   <section class="tech-details">
     <span class="section-eyebrow">Technical Details</span>
@@ -1211,13 +1241,17 @@
     <dl class="tech-list">
       <div><dt>Current odometer</dt><dd>127,690 miles</dd></div>
       <div><dt>New short block &amp; rebuild in Dec. 2024 @</dt><dd>117,791 miles</dd></div>
+      <div><dt>Original VINs</dt><dd>10/10</dd></div>
+      <div><dt>Mfg Year</dt><dd>2006</dd></div>
       <div><dt>Panama Canal crossings</dt><dd>Two</dd></div>
       <div><dt>Pacific sailings</dt><dd>Two</dd></div>
       <div><dt>Atlantic sailings</dt><dd>Three</dd></div>
       <div><dt>Visits to the Caribbean</dt><dd>Two</dd></div>
-      <div><dt>Top speed, top down</dt><dd>Just under 200 km/h</dd></div>
+      <div><dt>Engines</dt><dd>Two</dd></div>
+      <div><dt>Top speed, top up</dt><dd>243 km/h</dd></div>
+      <div><dt>Top speed, top down</dt><dd>About 200 km/h</dd></div>
       <div><dt>Owners</dt><dd>One</dd></div>
-      <div><dt>Countries visited</dt><dd>Japan, USA, Germany,<br>Italy, Austria, Switzerland,<br>Liechtenstein</dd></div>
+      <div><dt>Countries 'visited'</dt><dd>Japan, USA, Germany,<br>Italy, Austria, Switzerland,<br>Liechtenstein</dd></div>
     </dl>
   </section>
 
